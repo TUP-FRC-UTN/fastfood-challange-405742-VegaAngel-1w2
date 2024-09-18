@@ -1,0 +1,13 @@
+<p class="fw-bold">Pedidos Ingresados</p>
+@for (item of Service.getPedidos(); track $index) {
+{{ item | json }}
+}
+<p class="fw-bold">Pedidos listos para entregar</p>
+@for (item of Service.pedidosListos; track $index){
+<li>
+  ({{ item.numero }}) - {{ item.description }}
+  <button (click)="Entregar(item)" type="button" class="btn btn-success">
+    Entregar
+  </button>
+</li>
+}

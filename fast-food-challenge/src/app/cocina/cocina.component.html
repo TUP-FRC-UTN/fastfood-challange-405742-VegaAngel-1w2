@@ -1,0 +1,33 @@
+<div class="conteiner-fluid row">
+  <h2>Componente Cocina</h2>
+  <div class="col-1"></div>
+  <div class="col-5">
+    <p>Pendiente de Cocinar</p>
+    <div class="row">
+      @for (item of Service.getPedidos(); track $index) {
+      <li>
+        ({{ item.numero }}) - {{ item.description }}
+
+        @if (!Service.hayUnPedido()) {
+        <button (click)="Cocinar(item)" type="button" class="btn btn-success">
+          Cocinar
+        </button>
+        }
+      </li>
+      }
+    </div>
+    <p>Pedidos en Coccion</p>
+    @for (item of Service.getPedidosEnCoccion(); track $index) { ({{
+      item.numero
+    }}) - {{ item.name }} -{{ item.description }}
+    <button
+      (click)="terminarPedido(item)"
+      type="button"
+      class="btn btn-primary"
+    >
+      Pedido Terminado
+    </button>
+    }
+  </div>
+  <div class="col-6"></div>
+</div>

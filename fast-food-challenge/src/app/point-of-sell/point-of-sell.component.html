@@ -1,0 +1,38 @@
+<h2>Component Point of Sell - POS</h2>
+<div class="conteiner-fluid row">
+  <div class="col-1"></div>
+  <div class="col-3">
+    <form>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Nombre:</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            [(ngModel)]="name1"
+            name="name1"
+            required
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Pedido:</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="input"
+            [(ngModel)]="description1"
+            name="description1"
+            required
+          />
+        </div>
+      </div>
+      <button (click)="EnviarPedido()" type="submit" class="btn btn-primary">
+        Ordenar
+      </button>
+    </form>
+  </div>
+  <div class="col-8"></div>
+</div>
